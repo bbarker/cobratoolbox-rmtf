@@ -46,7 +46,9 @@ for i=1:size(dir(test_path))
         for j = 1: size(folder_functions)
               cd(test_folder);
               func =folder_functions{j};
-              
+              if strcmp(func, 'testSBML.m')
+                  continue;
+              end
               %parse func so that it doesn't include '.m' (stores in p)
               p = strtok(func, '.');
               
